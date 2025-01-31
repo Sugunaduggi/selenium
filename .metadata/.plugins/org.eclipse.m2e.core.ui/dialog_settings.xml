@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectWizardLocationPage">
+		<list key="location">
+			<item value="C:\Users\2372547\eclipse-workspace\hackthon"/>
+			<item value="C:\Users\2372547\eclipse-workspace\seleniumwebdriver\src\test\java\practicetesting\Pdemo.java"/>
+			<item value="C:\Users\2372547\eclipse-workspace"/>
+			<item value="C:\Users\2372547\eclipse-workspace\seleniumwebdriver"/>
+			<item value="C:\Users\2372547\eclipse-workspace\collections.java"/>
+			<item value="C:\Users\2372547\eclipse-workspace\seleniumwebdriver\src\test\java\miniproject\Miniproject1Test.java"/>
+			<item value="C:\Users\2372547\eclipse-workspace\collections.java\src\oops1\java\Car.java"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArchetypePage">
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="Maven2ProjectWizardArchifactPage">
+		<list key="package">
+		</list>
+		<list key="groupId">
+		</list>
+		<list key="artifactId">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArtifactPage">
+		<list key="groupId">
+			<item value="seleniumpractice"/>
+			<item value="hackthon1"/>
+			<item value="hackthon"/>
+			<item value="Hackthon"/>
+			<item value="suguna1"/>
+		</list>
+		<list key="name">
+			<item value="Hackthon"/>
+			<item value="pro"/>
+		</list>
+		<list key="artifactId">
+			<item value="seleniumpractice"/>
+			<item value="hackthon1"/>
+			<item value="hackthon"/>
+			<item value="Hackthon"/>
+			<item value="suguna1"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+		<list key="ciManagementUrl">
+		</list>
+		<list key="ciManagementSystem">
+		</list>
+		<list key="issueManagementSystem">
+		</list>
+		<list key="issueManagementUrl">
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+</section>

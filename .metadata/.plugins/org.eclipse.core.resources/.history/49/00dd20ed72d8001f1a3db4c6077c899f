@@ -1,0 +1,60 @@
+package hackthon;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.TestNG;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+import java.io.IOException;
+import java.util.Arrays;
+
+public class Hack1 {
+    WebDriver driver;
+    Hack1Methods methods;
+    Utilityclass utility;
+
+    @BeforeClass
+    public void setUp() throws IOException {
+        driver = new ChromeDriver();
+        methods = new Hack1Methods(driver);
+        methods.initializeDriver();
+        utility = new Utilityclass();
+    }
+
+    @Test(priority = 1)
+    public void testScrollAndClickBookshelves() throws InterruptedException, IOException {
+        methods.scrollAndClickBookshelves();
+        String[] data = utility.getData(1); // Fetch data for the first test case
+        System.out.println("Data from Excel: " + Arrays.toString(data));
+        // Use data from Excel in your test
+    }
+
+    @Test(priority = 2)
+    public void testHandlePriceSlider() throws InterruptedException, IOException {
+        methods.handlePriceSlider();
+        String[] data = utility.getData(2); // Fetch data for the second test case
+        System.out.println("Data from Excel: " + Arrays.toString(data));
+        // Use data from Excel in your test
+    }
+
+    @Test(priority = 3)
+    public void testExtractBookshelves() throws InterruptedException, IOException {
+        methods.extractBookshelves();
+        String[] data = utility.getData(3); // Fetch data for the third test case
+        System.out.println("Data from Excel: " + Arrays.toString(data));
+        // Use data from Excel in your test
+    }
+
+    @AfterClass
+    public void tearDown() throws IOException {
+        driver.quit();
+    }
+
+    public static void main(String[] args) {
+        TestNG testng = new TestNG();
+        testng.setTestClasses(new Class[] { Hack1.class });
+        testng.run();
+    }
+}

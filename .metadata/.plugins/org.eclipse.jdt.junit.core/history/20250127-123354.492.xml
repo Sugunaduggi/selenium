@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner (1)" project="hackthon1" tests="1" started="1" failures="0" errors="1" ignored="0">
+  <testsuite name="Runner.TestRunner" time="25.698" displayname="TestRunner" uniqueid="[engine:junit-vintage]/[runner:Runner.TestRunner]">
+    <testsuite name="Bookshelves Search and Filter" time="25.698" uniqueid="[engine:junit-vintage]/[runner:Runner.TestRunner]/[test:rO0ABXNyAClpby5jdWN1bWJlci5qdW5pdC5GZWF0dXJlUnVubmVyJEZlYXR1cmVJZAAAAAAAAAABAgABTAADdXJpdAAOTGphdmEvbmV0L1VSSTt4cHNyAAxqYXZhLm5ldC5VUkmsAXguQ55JqwMAAUwABnN0cmluZ3QAEkxqYXZhL2xhbmcvU3RyaW5nO3hwdABkZmlsZTovLy9DOi9Vc2Vycy8yMzcyNTQ3L2VjbGlwc2Utd29ya3NwYWNlL2hhY2t0aG9uMS9zcmMvdGVzdC9yZXNvdXJjZXMvRmVhdHVyZXMvQm9va3NoZWx2ZXMuZmVhdHVyZXg=]">
+      <testcase name="Search for bookshelves within price range" classname="Search for bookshelves within price range" time="25.698" uniqueid="[engine:junit-vintage]/[runner:Runner.TestRunner]/[test:rO0ABXNyAClpby5jdWN1bWJlci5qdW5pdC5GZWF0dXJlUnVubmVyJEZlYXR1cmVJZAAAAAAAAAABAgABTAADdXJpdAAOTGphdmEvbmV0L1VSSTt4cHNyAAxqYXZhLm5ldC5VUkmsAXguQ55JqwMAAUwABnN0cmluZ3QAEkxqYXZhL2xhbmcvU3RyaW5nO3hwdABkZmlsZTovLy9DOi9Vc2Vycy8yMzcyNTQ3L2VjbGlwc2Utd29ya3NwYWNlL2hhY2t0aG9uMS9zcmMvdGVzdC9yZXNvdXJjZXMvRmVhdHVyZXMvQm9va3NoZWx2ZXMuZmVhdHVyZXg=]/[test:rO0ABXNyAChpby5jdWN1bWJlci5qdW5pdC5QaWNrbGVSdW5uZXJzJFBpY2tsZUlkAAAAAAAAAAECAAJJAApwaWNrbGVMaW5lTAADdXJpdAAOTGphdmEvbmV0L1VSSTt4cAAAAAZzcgAMamF2YS5uZXQuVVJJrAF4LkOeSasDAAFMAAZzdHJpbmd0ABJMamF2YS9sYW5nL1N0cmluZzt4cHQAZGZpbGU6Ly8vQzovVXNlcnMvMjM3MjU0Ny9lY2xpcHNlLXdvcmtzcGFjZS9oYWNrdGhvbjEvc3JjL3Rlc3QvcmVzb3VyY2VzL0ZlYXR1cmVzL0Jvb2tzaGVsdmVzLmZlYXR1cmV4]">
+        <error>io.cucumber.junit.UndefinedStepException: The step 'I should see filtered bookshelves' is undefined.
+You can implement this step using the snippet(s) below:
+
+@Then("I should see filtered bookshelves")
+public void i_should_see_filtered_bookshelves() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+&#13;
+&#13;
+</error>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>

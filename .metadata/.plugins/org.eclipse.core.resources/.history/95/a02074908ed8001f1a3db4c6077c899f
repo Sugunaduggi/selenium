@@ -1,0 +1,31 @@
+package hackthon;
+
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+
+public class Utilityclass {
+    public static String[] getData() {
+        String[] data = new String[3];
+        XSSFWorkbook workbook;
+        try {
+            File file = new File("testdata/Book2.xlsx");
+            FileInputStream fis = new FileInputStream(file);
+            workbook = new XSSFWorkbook(fis);
+            XSSFSheet sheet = workbook.getSheetAt(0);
+
+            data[0] = sheet.getRow(1).getCell(1).toString(); // Testcase ID
+            data[1] = sheet.getRow(1).getCell(2).toString(); // URL
+            data[2] = sheet.getRow(1).getCell(3).toString();
+            workbook.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return data;
+    }
+
+}

@@ -1,0 +1,63 @@
+package seleniumpractice;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Staticwebtables {
+
+	public static void main(String[] args) {
+		
+		// TODO Auto-generated method stub
+		
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://blazedemo.com/");
+		driver.manage().window().maximize();
+		
+		driver.findElement(By.xpath("//input[@type='submit']")).click();
+		
+		
+		//count number of rows in a table 
+		
+		List<WebElement> number_of_rows=driver.findElements(By.xpath("//table[@class='table']//tr"));
+		int row = number_of_rows.size();
+//		System.out.println("Total number of rows "+number_of_rows.size());
+		
+		
+		//extracting the columns
+		
+		List<WebElement> number_of_columns=driver.findElements(By.xpath("//table[@class='table']//th"));
+//		System.out.println("Total number of columns " +number_of_columns.size());
+		int col = number_of_columns.size();
+		
+		//read data from specific row and column
+		
+//		System.out.println("here im extracting my element");
+		WebElement myelement= driver.findElement(By.xpath("//table[@class='table']//tr[1]//td[3]"));
+//		System.out.println(myelement.getText());
+		
+//		System.out.println("here im extracting my element");
+		WebElement myelements= driver.findElement(By.xpath("//table[@class='table']//tr[5]//td[2]"));
+//		System.out.println(myelements.getText());
+		
+        //print all the rows
+		
+		for(int i = 1;i<row;i++) 
+		{
+			for(int j=1;j<=col;j++)
+			{
+				String data = driver.findElement(By.xpath("//table[@class='table']//tr["+i+"]//td["+j+"]")).getText();
+				System.out.print(data+" ");
+			}
+			System.out.println();
+		
+		}
+		
+		driver.quit();
+
+	}
+
+}

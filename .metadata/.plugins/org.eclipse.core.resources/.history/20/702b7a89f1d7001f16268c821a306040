@@ -1,0 +1,24 @@
+package hackthon;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Hack1 {
+
+    public static void main(String[] args) throws InterruptedException {
+        
+        // Initialize the WebDriver
+        WebDriver driver = new ChromeDriver();
+        Hack1Methods methods = new Hack1Methods(driver);
+
+        // Call the methods
+        methods.initializeDriver();
+        methods.scrollAndClickBookshelves();
+        methods.handlePriceSlider();
+        methods.extractBookshelves();
+        methods.retrieveSubMenuItems();
+        methods.captureErrorMessage();
+
+        //driver.quit();
+    }
+}

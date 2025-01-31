@@ -1,0 +1,32 @@
+package seleniumpractice;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Staticwebtables {
+
+	public static void main(String[] args) {
+		
+		// TODO Auto-generated method stub
+		
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://blazedemo.com/");
+		driver.manage().window().maximize();
+		
+		driver.findElement(By.xpath("//input[@type='submit']")).click();
+		
+		
+		//count number of rows in a table 
+		
+		WebElement number_of_rows=driver.findElement(By.xpath("//table[@class='table']//tr"));
+		System.out.println("Total number of rows"+number_of_rows);
+		
+		WebElement number_of_columns=driver.findElement(By.xpath("//table[@class='table']//th"));
+		System.out.println("Total number of columns" +number_of_columns);
+		
+
+	}
+
+}

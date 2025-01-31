@@ -1,0 +1,20 @@
+package smepractice.java;
+
+interface payment
+{
+	void makePayment(double amount);
+}
+
+class creditcardpayment implements payment{
+	public void makePayment(double amount) {
+		System.out.println("Paid" +amount+ "using credit card");
+	}
+}
+public class Abstract2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

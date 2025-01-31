@@ -1,0 +1,31 @@
+package smepractice.java;
+
+class A{
+	
+	String name;
+	int age;
+	
+	 A(String s,int a) {
+		name=s;
+		age=a;
+		
+	}
+	
+	 void show() {
+		 System.out.println("your name is "+name+ "your age is "+age);
+	 }
+
+}
+
+
+public class Constructor {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		A obj= new A("suguna",24);
+		obj.show();
+		
+
+	}
+
+}

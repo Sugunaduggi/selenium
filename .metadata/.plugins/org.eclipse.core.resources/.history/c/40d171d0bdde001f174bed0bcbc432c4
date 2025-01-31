@@ -1,0 +1,34 @@
+package smepractice.java;
+
+interface Suguna{
+	void m1() ;
+}
+
+interface Sarath{
+	void m2() {
+		System.out.println("this is sarath method");
+	}
+}
+
+
+class Sarathbabu implements Suguna,Sarath{
+	
+	void sarathbabu() {
+		System.out.println("this is in sarathbabu");
+	}
+	
+}
+
+public class MultipleInheritance {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Sarathbabu obj= new Sarathbabu();
+		obj.m1();
+		obj.m2();
+		obj.sarathbabu();
+
+	}
+
+}

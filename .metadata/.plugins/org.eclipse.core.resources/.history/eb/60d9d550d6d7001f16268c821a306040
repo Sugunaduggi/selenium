@@ -1,0 +1,171 @@
+package hackthon;
+
+import java.time.Duration;
+import java.util.ArrayList;
+import java.util.Iterator;
+//import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+//import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class Hack1 {
+
+    public static void main(String[] args) throws InterruptedException {
+        
+        // Initialize the WebDriver
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://www.urbanladder.com");
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+        driver.navigate().refresh();
+        
+        // Initialize WebDriverWait
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        
+        //  MODULE - 1 Scrolling for bookshelves website
+        WebElement study = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"content\"]/div[3]/div/div[1]")));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true);", study);
+        
+        // Clicking the bookshelves
+        WebElement study1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"content\"]/div[3]/div/div[2]/a[7]/h4")));
+        study1.click();
+        
+        Thread.sleep(2000);
+        
+        WebElement bookshelves = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='gname']")));
+        bookshelves.click();
+        
+        Thread.sleep(1000);
+        
+        // Handle the pop-up if it appears
+        try {
+            WebElement closePopup = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@class='close-reveal-modal hide-mobile']")));
+            closePopup.click();
+        } catch (Exception e) {
+            System.out.println("No pop-up displayed after selection of  bookshelves.");
+        }
+        
+        // Handling the price slider
+        Thread.sleep(2000);
+        
+        driver.findElement(By.xpath("//div[normalize-space()='Price']")).click();
+       
+        
+        WebElement priceSlider = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class='noUi-handle noUi-handle-upper']")));
+        
+        // Initialize Actions
+        Actions actions = new Actions(driver);
+        
+        // Move the slider handle to the desired position
+        actions.clickAndHold(priceSlider).moveByOffset(-273, 0).release().perform();
+        
+        // Clicking the price filter
+        WebElement priceFilter = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"filters-form\"]/div[1]/div/div/ul/li[2]/div[1]/div")));
+        js.executeScript("arguments[0].scrollIntoView(true);", priceFilter);
+        wait.until(ExpectedConditions.elementToBeClickable(priceFilter)).click();
+        
+        WebElement storage = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[normalize-space()='Storage Type']")));
+        storage.click();
+        Thread.sleep(2000);
+        WebElement open = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@id='filters_storage_type_Open']")));
+        js.executeScript("arguments[0].scrollIntoView(true);", open);
+        wait.until(ExpectedConditions.elementToBeClickable(open)).click();
+        
+        driver.findElement(By.xpath("//input[@id='filters_availability_In_Stock_Only']")).click();
+        
+        
+        
+        // Extracting the first three bookshelves)
+        Thread.sleep(3000);
+        List<WebElement> bookshelfTitles = driver.findElements(By.xpath("//span[@class='name']"));
+        List<WebElement> prices = driver.findElements(By.xpath("//meta[@itemprop='price']"));
+
+        // Print the first three bookshelf titles
+        for (int i = 0; i < 3; i++)
+        {
+            System.out.println(bookshelfTitles.get(i).getText());
+            System.out.println(prices.get(i).getAttribute("content"));
+            
+        }
+        
+        Thread.sleep(2000);
+       //MODULE -2 retriving submenu items from collections
+        
+        //scrolling to see the option collections 
+        WebElement collections = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[normalize-space()='Oasis Collection']")));
+        js.executeScript("arguments[0].scrollIntoView(true);", collections);
+        wait.until(ExpectedConditions.elementToBeClickable(collections)).click();
+        
+        //extracting the sub menu items
+        Thread.sleep(2000);
+        
+        System.out.println("collections sub menu items :");
+        
+        List<WebElement> subMenuItems = driver.findElements(By.xpath("//ul[@class='taxonslist']//li[contains(@class,'subnav_item')]//a[@class='inverted']/span"));
+        for(int i=0;i<6;i++) {
+        	System.out.println(subMenuItems.get(i).getText());
+        }
+        
+        
+        
+        // navigating back to home page 
+        driver.navigate().to("https://www.urbanladder.com");
+        System.out.println("----successfully navigated to home page-----");
+        
+        // MODULE -3 CAPTURING THE ERROR MESSAGE
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("(//span[normalize-space()='Lighting & Decor'])[1]")).click();
+        driver.findElement(By.xpath("//span[normalize-space()='Photo Frames']")).click();
+        driver.findElement(By.xpath("//div[normalize-space()='Price']")).click();
+        driver.findElement(By.xpath("//ul[@class='filters-list']//div[1]//label[1]")).click();
+     
+        driver.findElement(By.xpath("(//div[normalize-space()='Brand'])[1]")).click();
+       
+        driver.findElement(By.xpath("//input[@id='filters_brand_name_By_Urban_Ladder']")).click();
+         
+        System.out.println("selected urban ladder");
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//a[@class='product-img'][1]")).click();
+//        driver.findElement(By.xpath("/html/body/div[4]/ct-web-popup-imageonly//div/div[2]/div/svg/path")).click();
+        
+        Thread.sleep(1000);
+        Set<String> windowHandles = driver.getWindowHandles();
+        String currentHandle = driver.getWindowHandle();
+
+        // Switch to the new tab
+        for (String handle : windowHandles)
+        {
+            if (!handle.equals(currentHandle))
+            {
+                driver.switchTo().window(handle);
+                // Verify if this is the new tab
+                if (driver.getTitle().equals("White Mdf Photoframe - Urban Ladder"))
+                {
+                    System.out.println("true");
+                }
+                else 
+                {
+                	System.out.println("false");
+                }
+            }
+        }
+        
+        driver.findElement(By.xpath("/html/body/div[4]/ct-web-popup-imageonly//div/div[2]/div/svg/path")).click();
+
+
+        
+       
+        
+        
+    }
+}

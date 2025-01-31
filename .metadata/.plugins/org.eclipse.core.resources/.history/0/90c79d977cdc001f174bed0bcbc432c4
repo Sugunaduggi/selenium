@@ -1,0 +1,62 @@
+package hackthon1;
+
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import io.cucumber.java.en.*;
+
+import java.util.Arrays;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class BookshelvesSteps {
+    private WebDriver driver;
+    private Hack1Methods methods;
+    private String[] testData;
+
+    @Before
+    public void setup() {
+        driver = new ChromeDriver();
+        methods = new Hack1Methods(driver);
+        
+    }
+
+    @Given("I have launched the website")
+    public void i_have_launched_the_website() {
+        methods.initializeDriver();
+    }
+
+    @When("I scroll and click on bookshelves")
+    public void i_scroll_and_click_on_bookshelves() throws InterruptedException {
+        methods.scrollAndClickBookshelves();
+    }
+
+    @And("I set the price range using the slider")
+    public void i_set_the_price_range_using_slider() throws InterruptedException {
+        methods.handlePriceSlider();
+    }
+
+    @Then("I should see filtered bookshelves and extract bookshelf information")
+    public void i_should_see_filtered_bookshelves() throws InterruptedException {
+        methods.extractBookshelves();
+    }
+
+    
+
+    @And("I retrieve submenu items")
+    public void i_retrieve_submenu_items() throws InterruptedException {
+        methods.retrieveSubMenuItems();
+    }
+
+    @And("I capture any error messages")
+    public void i_capture_error_messages() throws InterruptedException {
+        methods.captureErrorMessage();
+    }
+
+    @After
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
+}

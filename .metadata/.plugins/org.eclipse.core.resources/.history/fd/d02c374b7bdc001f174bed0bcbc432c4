@@ -1,0 +1,13 @@
+Feature: Bookshelves Search and Filter
+  As a user
+  I want to search and filter bookshelves
+  So that I can find the right product
+
+  Scenario: Search for bookshelves within price range
+    Given I have launched the website
+    When I scroll and click on bookshelves
+    And I set the price range using the slider
+    Then I should see filtered bookshelves and extract bookshelf information
+ 
+    And I retrieve submenu items
+    And I capture any error messages

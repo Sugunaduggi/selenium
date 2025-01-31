@@ -1,0 +1,22 @@
+package smepractice.java;
+
+class A {
+    String name;
+    int age;
+
+    A(String s, int a) {
+        name = s;
+        age = a;
+    }
+
+    void show() {
+        System.out.println("Your name is " + name + " and your age is " + age);
+    }
+}
+
+public class Constructor {
+    public static void main(String[] args) {
+        A obj = new A("suguna", 24);
+        obj.show();
+    }
+}
